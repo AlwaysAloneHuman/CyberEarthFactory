@@ -1,4 +1,5 @@
 ﻿using CyberEarthFactory.Scripts.Engine;
+using CyberEarthFactory.Scripts.Game.Objects;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -7,8 +8,6 @@ namespace CyberEarthFactory
     public sealed class CyberEarthFactory : Game
     {
         public static CyberEarthFactory instance;
-
-        public static Texture2D defaultTexture;
 
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
@@ -37,6 +36,10 @@ namespace CyberEarthFactory
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            GameStorage.defaultTextures.Add("null", Content.Load<Texture2D>("Images/Player"));
+
+            GameState.activeState.members.Add(new Player());
 
             // TODO: use this.Content to load your game content here
         }

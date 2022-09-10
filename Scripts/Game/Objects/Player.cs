@@ -7,11 +7,11 @@ namespace CyberEarthFactory.Scripts.Game.Objects
     {
         public override void Update(float elapsed)
         {
-            if (GameInput.IsPressed(Keys.W)) position.Y -= elapsed;
-            if (GameInput.IsPressed(Keys.S)) position.Y += elapsed;
+            if (GameInput.IsPressed(Keys.W)) position.Y -= elapsed * 64;
+            if (GameInput.IsPressed(Keys.S)) position.Y += elapsed * 64;
 
-            if (GameInput.IsPressed(Keys.A)) position.X -= elapsed;
-            if (GameInput.IsPressed(Keys.D)) position.X += elapsed;
+            if (GameInput.IsPressed(Keys.A)) position.X -= elapsed * 64;
+            if (GameInput.IsPressed(Keys.D)) position.X += elapsed * 64;
 
             base.Update(elapsed);
         }

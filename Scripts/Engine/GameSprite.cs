@@ -7,7 +7,7 @@ namespace CyberEarthFactory.Scripts.Engine
     {
         public Vector2 position;
         public Vector2 size;
-        private Texture2D _texture = CyberEarthFactory.defaultTexture;
+        protected Texture2D _texture = GameStorage.defaultTextures["null"];
         public Texture2D texture { get { return _texture; } set { _texture = value; size.X = value.Width; size.Y = value.Height; } }
         public Color color = Color.White;
         public float angle;
