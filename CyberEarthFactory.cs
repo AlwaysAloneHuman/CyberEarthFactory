@@ -23,6 +23,8 @@ namespace CyberEarthFactory
         {
             instance = this;
 
+            GameStorage.Initialize();
+
             GameState.activeState = new GameState();
 
             _graphics.PreferredBackBufferWidth = 1280;
@@ -38,6 +40,7 @@ namespace CyberEarthFactory
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             GameStorage.defaultTextures.Add("null", Content.Load<Texture2D>("Images/Player"));
+            GameStorage.defaultTextures.Add("player", Content.Load<Texture2D>("Images/Player"));
 
             GameState.activeState.members.Add(new Player());
 
@@ -54,7 +57,7 @@ namespace CyberEarthFactory
         }
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Gray);
+            GraphicsDevice.Clear(Color.WhiteSmoke);
 
             _spriteBatch.Begin();
             foreach (var spr in GameState.activeState.members) DrawSprite(spr);

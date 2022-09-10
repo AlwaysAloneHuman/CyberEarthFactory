@@ -15,5 +15,10 @@ namespace CyberEarthFactory.Scripts.Game.Objects
 
             base.Update(elapsed);
         }
+        public Player()
+        {
+            texture = GameStorage.defaultTextures["player"];
+            position = GameMath.ScreenSize / 2;
+        }
     }
 }
